@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>G:/Snakez/Content/Images/Background.jpg</File>
+    <File>G:/Snakez/Content/Images/Icon.png</File>
+    <File>G:/Snakez/Content/Images/MenuHeader.png</File>
+    <File>G:/Snakez/Content/Images/Powerup1.png</File>
+    <File>G:/Snakez/Content/Images/Powerup2.png</File>
+    <File>G:/Snakez/Content/Images/Powerup3.png</File>
+    <File>G:/Snakez/Content/Font/MenuFont.spritefont</File>
+  </SourceFiles>
+</SourceFileCollection>
