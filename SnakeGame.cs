@@ -39,6 +39,7 @@ namespace Snakez
 
             screenHandler = new ScreenHandler();
             screenHandler.addScreen("main", new MainScreen());
+            screenHandler.addScreen("game", new GameScreen());
 
             screenHandler.show("main");
         }

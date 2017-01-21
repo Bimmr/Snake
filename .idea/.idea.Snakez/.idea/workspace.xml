@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="67e8d62b-835b-4cf2-a0c0-d69899c2d2d6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.Snakez/.idea/contentModel.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.Snakez/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.Snakez/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.Snakez/riderModule.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Windows/x86/Debug/Snakez.exe" afterPath="$PROJECT_DIR$/bin/Windows/x86/Debug/Snakez.exe" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Windows/x86/Debug/Snakez.pdb" afterPath="$PROJECT_DIR$/bin/Windows/x86/Debug/Snakez.pdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obj/x86/Debug/Snakez.csprojResolveAssemblyReference.cache" afterPath="$PROJECT_DIR$/obj/x86/Debug/Snakez.csprojResolveAssemblyReference.cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obj/x86/Debug/Snakez.exe" afterPath="$PROJECT_DIR$/obj/x86/Debug/Snakez.exe" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obj/x86/Debug/Snakez.pdb" afterPath="$PROJECT_DIR$/obj/x86/Debug/Snakez.pdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Content/obj/Windows/.mgcontent" afterPath="$PROJECT_DIR$/Content/obj/Windows/.mgcontent" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Content/obj/Windows/Font/MenuFont.mgcontent" afterPath="$PROJECT_DIR$/Content/obj/Windows/Font/MenuFont.mgcontent" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Content/obj/Windows/Images/Background.mgcontent" afterPath="$PROJECT_DIR$/Content/obj/Windows/Images/Background.mgcontent" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Content/obj/Windows/Images/Icon.mgcontent" afterPath="$PROJECT_DIR$/Content/obj/Windows/Images/Icon.mgcontent" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Content/obj/Windows/Images/MenuHeader.mgcontent" afterPath="$PROJECT_DIR$/Content/obj/Windows/Images/MenuHeader.mgcontent" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Content/obj/Windows/Images/Powerup1.mgcontent" afterPath="$PROJECT_DIR$/Content/obj/Windows/Images/Powerup1.mgcontent" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Content/obj/Windows/Images/Powerup2.mgcontent" afterPath="$PROJECT_DIR$/Content/obj/Windows/Images/Powerup2.mgcontent" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Content/obj/Windows/Images/Powerup3.mgcontent" afterPath="$PROJECT_DIR$/Content/obj/Windows/Images/Powerup3.mgcontent" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Screens/GameScreen.cs" afterPath="$PROJECT_DIR$/Screens/GameScreen.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Screens/MainScreen.cs" afterPath="$PROJECT_DIR$/Screens/MainScreen.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Snake.cs" afterPath="$PROJECT_DIR$/Snake.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpriteHandler.cs" afterPath="$PROJECT_DIR$/SpriteHandler.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.DXGI.xml" afterPath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.DXGI.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.Direct2D1.xml" afterPath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.Direct2D1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.Direct3D11.xml" afterPath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.Direct3D11.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.Direct3D9.xml" afterPath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.Direct3D9.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.MediaFoundation.xml" afterPath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.MediaFoundation.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.RawInput.xml" afterPath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.RawInput.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.XAudio2.xml" afterPath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.XAudio2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.XInput.xml" afterPath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.XInput.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.xml" afterPath="$PROJECT_DIR$/bin/Windows/x86/Debug/SharpDX.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obj/x86/Debug/Snakez.csproj.FileListAbsolute.txt" afterPath="$PROJECT_DIR$/obj/x86/Debug/Snakez.csproj.FileListAbsolute.txt" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="MainScreen.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Screens/MainScreen.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+              <folding>
+                <marker date="1484945047748" expanded="true" signature="6:125" ph="..." />
+                <marker date="1484945047748" expanded="true" signature="151:2421" ph="{...}" />
+                <marker date="1484945047748" expanded="true" signature="190:2419" ph="{...}" />
+                <marker date="1484945047748" expanded="true" signature="300:1293" ph="{...}" />
+                <marker date="1484945047748" expanded="true" signature="1332:1393" ph="{...}" />
+                <marker date="1484945047748" expanded="true" signature="1432:1492" ph="{...}" />
+                <marker date="1484945047748" expanded="true" signature="1546:2235" ph="{...}" />
+                <marker date="1484945047748" expanded="true" signature="2291:2413" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameScreen.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Screens/GameScreen.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+              <folding>
+                <marker date="1484945606296" expanded="true" signature="6:69" ph="..." />
+                <marker date="1484945606296" expanded="true" signature="95:543" ph="{...}" />
+                <marker date="1484945606296" expanded="true" signature="134:541" ph="{...}" />
+                <marker date="1484945606296" expanded="true" signature="219:290" ph="{...}" />
+                <marker date="1484945606296" expanded="true" signature="330:377" ph="{...}" />
+                <marker date="1484945606296" expanded="true" signature="416:476" ph="{...}" />
+                <marker date="1484945606296" expanded="true" signature="515:535" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpriteHandler.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpriteHandler.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="88" lean-forward="false" selection-start-line="15" selection-start-column="88" selection-end-line="15" selection-end-column="88" />
+              <folding>
+                <marker date="1484945061606" expanded="true" signature="6:104" ph="..." />
+                <marker date="1484945061606" expanded="true" signature="122:754" ph="{...}" />
+                <marker date="1484945061606" expanded="true" signature="155:752" ph="{...}" />
+                <marker date="1484945061606" expanded="true" signature="293:746" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Snake.cs" />
+        <option value="$PROJECT_DIR$/Screens/MainScreen.cs" />
+        <option value="$PROJECT_DIR$/SpriteHandler.cs" />
+        <option value="$PROJECT_DIR$/Screens/GameScreen.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Snakez (1 project)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Snakez" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Snakez (1 project)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Snakez" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Screens" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BimmCore-C--Applications/BimmCore.sln" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager" selected=".NET Project.Default">
+    <configuration default="true" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Snakez.csproj" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value="Default" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Windows/x86/Debug/Snakez.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bin/Windows/x86/Debug" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue=".NET Project.Default" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="67e8d62b-835b-4cf2-a0c0-d69899c2d2d6" name="Default" comment="" />
+      <created>1484943697310</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1484943697310</updated>
+      <workItem from="1484943699796" duration="1920000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1920000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UnitTesting" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12100213" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Snake.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <folding>
+            <marker date="1484943786536" expanded="true" signature="6:182" ph="..." />
+            <marker date="1484943786536" expanded="true" signature="200:2909" ph="{...}" />
+            <marker date="1484943786536" expanded="true" signature="225:2907" ph="{...}" />
+            <marker date="1484943786536" expanded="true" signature="520:603" ph="{...}" />
+            <marker date="1484943786536" expanded="true" signature="546:593" ph="{...}" />
+            <marker date="1484943786536" expanded="true" signature="704:1005" ph="{...}" />
+            <marker date="1484943786536" expanded="true" signature="1040:1103" ph="{...}" />
+            <marker date="1484943786536" expanded="true" signature="1131:1195" ph="{...}" />
+            <marker date="1484943786536" expanded="true" signature="1235:1760" ph="{...}" />
+            <marker date="1484943786536" expanded="true" signature="1309:1725" ph="{...}" />
+            <marker date="1484943786536" expanded="true" signature="1792:2076" ph="{...}" />
+            <marker date="1484943786536" expanded="true" signature="2105:2693" ph="{...}" />
+            <marker date="1484943786536" expanded="true" signature="2721:2901" ph="{...}" />
+            <marker date="1484943786536" expanded="true" signature="2772:2890" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpriteHandler.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="88" lean-forward="false" selection-start-line="15" selection-start-column="88" selection-end-line="15" selection-end-column="88" />
+          <folding>
+            <marker date="1484945061606" expanded="true" signature="6:104" ph="..." />
+            <marker date="1484945061606" expanded="true" signature="122:754" ph="{...}" />
+            <marker date="1484945061606" expanded="true" signature="155:752" ph="{...}" />
+            <marker date="1484945061606" expanded="true" signature="293:746" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Screens/MainScreen.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding>
+            <marker date="1484945047748" expanded="true" signature="6:125" ph="..." />
+            <marker date="1484945047748" expanded="true" signature="151:2421" ph="{...}" />
+            <marker date="1484945047748" expanded="true" signature="190:2419" ph="{...}" />
+            <marker date="1484945047748" expanded="true" signature="300:1293" ph="{...}" />
+            <marker date="1484945047748" expanded="true" signature="1332:1393" ph="{...}" />
+            <marker date="1484945047748" expanded="true" signature="1432:1492" ph="{...}" />
+            <marker date="1484945047748" expanded="true" signature="1546:2235" ph="{...}" />
+            <marker date="1484945047748" expanded="true" signature="2291:2413" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Screens/GameScreen.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding>
+            <marker date="1484945606296" expanded="true" signature="6:69" ph="..." />
+            <marker date="1484945606296" expanded="true" signature="95:543" ph="{...}" />
+            <marker date="1484945606296" expanded="true" signature="134:541" ph="{...}" />
+            <marker date="1484945606296" expanded="true" signature="219:290" ph="{...}" />
+            <marker date="1484945606296" expanded="true" signature="330:377" ph="{...}" />
+            <marker date="1484945606296" expanded="true" signature="416:476" ph="{...}" />
+            <marker date="1484945606296" expanded="true" signature="515:535" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

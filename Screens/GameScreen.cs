@@ -1,9 +1,7 @@
 ﻿using BimmCore.MonoGame.Components;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
+using BimmCore.MonoGame;
 
 namespace Snakez.Screens
 {
@@ -13,26 +11,61 @@ namespace Snakez.Screens
 
         public GameScreen()
         {
-            snakes = new List<Snake>();
+            this.snakes = new List<Snake>();
+        }
+
+        public List<Snake> getSnakes()
+        {
+            return snakes;
+        }
+        public void clearSnakes()
+        {
+            snakes.Clear();
         }
 
         public void addSnake(Snake snake)
         {
             snakes.Add(snake);
         }
-        public List<Snake> getSnakes()
-        {
-            return snakes;
-        }
-        
+
         public override void onHide()
         {
-
         }
 
         public override void onShow()
         {
+        }
+        public override void Draw(GameTime gameTime)
+        {
+            SpriteHandler.mainBackground.draw(MonoHelper.SpriteBatch,
+                new Vector2(0, 0));
 
+
+            foreach (Snake snake in snakes)
+                if (snake.isAlive())
+                    snake.draw();
+
+            base.Draw(gameTime);
+        }
+        public override void Update(GameTime gameTime)
+        {
+            bool foundAlive = false;
+
+            foreach (Snake snake in snakes)
+                if (snake.isAlive())
+                {
+                    foundAlive = true;
+                    if (snake.name == "AI")
+                        ((SnakeAI)snake).update();
+                    else
+                        snake.update();
+                }
+            if (!foundAlive)
+            {
+
+            }
+
+            base.Update(gameTime);
         }
     }
 }

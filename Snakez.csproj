@@ -55,7 +55,9 @@
   <ItemGroup>
     <Compile Include="Screens\GameScreen.cs" />
     <Compile Include="Screens\SinglePlayer.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Snake.cs" />
+    <Compile Include="SnakeAI.cs" />
     <Compile Include="SpriteHandler.cs" />
     <Compile Include="FontHandler.cs" />
     <Compile Include="Screens\MainScreen.cs" />
@@ -64,8 +66,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="BimmCore">
-      <HintPath>..\..\Libraries\BimmCore\bin\Debug\BimmCore.dll</HintPath>
+    <Reference Include="BimmCore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BimmCore-C--Applications\bin\Debug\BimmCore.dll</HintPath>
     </Reference>
     <Reference Include="MonoGame.Framework">
       <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>

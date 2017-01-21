@@ -4,12 +4,12 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>G:/Snakez/Content/Images/Background.jpg</File>
-    <File>G:/Snakez/Content/Images/Icon.png</File>
-    <File>G:/Snakez/Content/Images/MenuHeader.png</File>
-    <File>G:/Snakez/Content/Images/Powerup1.png</File>
-    <File>G:/Snakez/Content/Images/Powerup2.png</File>
-    <File>G:/Snakez/Content/Images/Powerup3.png</File>
-    <File>G:/Snakez/Content/Font/MenuFont.spritefont</File>
+    <File>C:/Users/Randy/RiderProjects/Snake/Content/Images/Background.jpg</File>
+    <File>C:/Users/Randy/RiderProjects/Snake/Content/Images/Icon.png</File>
+    <File>C:/Users/Randy/RiderProjects/Snake/Content/Images/MenuHeader.png</File>
+    <File>C:/Users/Randy/RiderProjects/Snake/Content/Images/Powerup1.png</File>
+    <File>C:/Users/Randy/RiderProjects/Snake/Content/Images/Powerup2.png</File>
+    <File>C:/Users/Randy/RiderProjects/Snake/Content/Images/Powerup3.png</File>
+    <File>C:/Users/Randy/RiderProjects/Snake/Content/Font/MenuFont.spritefont</File>
   </SourceFiles>
 </SourceFileCollection>
