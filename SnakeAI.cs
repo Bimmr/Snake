@@ -81,49 +81,46 @@ namespace Snakez
             //If will hit self, make sure to not trap self
             if (hitSelf(getNextPoint()))
             {
+                Debug.WriteLine("Hit Self");
                 Vector2 willHit = getNextPoint();
-                for (int i = 1; i < body.Count; i++)
-                {
-                    if (body[i - 1] == willHit)
-                    {
-                        direction = getOpposite(findDirection(willHit, body[i]));
-                    }
-                }
+
+                direction = findDirection(willHit, body[findPos(willHit) - 1]);
+                return;
+            }
+            if (hitWalls(getNextPoint()) && prevDirections.Count > 1)
+            {
+                Debug.WriteLine("Hit Wall");
+
+                Direction ignoreDir = prevDirections[0];
+                Direction lastTravel = direction;
+
+
+                //TODO Make sure that if current is horizontal only listen to last horiztonal
+                for (int i = 0; i < prevDirections.Count; i++)
+                    if (ignoreDir != prevDirections[i])
+                        lastTravel = prevDirections[i];
+
+                direction = lastTravel;
+                return;
+               
             }
 
             //If not hitting self, then choose random direction
-            else
-            {
 
-                //Try going all 4 directions(In a random order), and if nothing works give up
-                Random r = new Random();
-                List<Direction> dirs = new List<Direction> { Direction.Up, Direction.Down, Direction.Left, Direction.Right };
-                for (int i = 0; i < 4; i++)
-                {
-                    direction = dirs[r.Next(dirs.Count)];
-                    if (!willCollide(getNextPoint()))
-                        break;
-                    else
-                        dirs.Remove(direction);
-                }
-            }
-            //Make sure to not trap self by going opposite way of last turn
-            if (prevDirections.Count > 2)
+            Debug.WriteLine("Random Direction");
+            //Try going all 4 directions(In a random order), and if nothing works give up
+            Random r = new Random();
+            List<Direction> dirs = new List<Direction> { Direction.Up, Direction.Down, Direction.Left, Direction.Right };
+            for (int i = 0; i < 4; i++)
             {
-                //Iterate through previous directions till it finds the previous previous direction, then make sure it doesn't go the opposite directoon
-                Direction d = prevDirections[0];
-                for (int i = 0; i < prevDirections.Count; i++)
-                {
-                    if(d != prevDirections[i])
-                    {
-                        if(getOpposite(direction) == prevDirections[i])
-                        {
-                            direction = prevDirections[i];
-                        }
-                        break;
-                    }
-                }
+                direction = dirs[r.Next(dirs.Count)];
+                if (!willCollide(getNextPoint()))
+                    break;
+                else
+                    dirs.Remove(direction);
+
             }
+            
 
         }
         public new void update()
@@ -175,7 +172,7 @@ namespace Snakez
         public new void removeTail()
         {
             score++;
-            if(prevDirections.Count > 1)
+            if (prevDirections.Count > 1)
                 prevDirections.RemoveAt(prevDirections.Count - 1);
             body.RemoveAt(body.Count - 1);
         }
@@ -199,6 +196,36 @@ namespace Snakez
                 default:
                     return Direction.Up;
             }
+        }
+        private int findPos(Vector2 vec)
+        {
+            int pos = -1;
+            for (int i = 0; i < body.Count; i++)
+                if (body[i] == vec)
+                    pos = i;
+            return pos;
+        }
+
+        private bool isBox(Vector2 point1, Vector2 point2)
+        {
+            int p1 = findPos(point1);
+            int p2 = findPos(point2);
+            Debug.WriteLine(p1 + " " + p2 + " " + (p2 - p1));
+            for (int i = 0; i <= p2 - p1; i++)
+            {
+                if (body[p1 + i] == body[p2 - i])
+                    return true;
+            }
+            return false;
+
+        }
+        private bool isVertical(Direction dir)
+        {
+            return dir == Direction.Up || dir == Direction.Down;
+        }
+        private bool isHorizontal(Direction dir)
+        {
+            return dir == Direction.Down || dir == Direction.Up;
         }
     }
 }

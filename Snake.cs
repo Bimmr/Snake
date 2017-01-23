@@ -142,6 +142,10 @@ namespace Snakez
             }
             return false;
         }
+        public bool hitWalls(Vector2 point)
+        {
+            return head.X < 0 || head.X > MonoHelper.Size.X || head.Y < 0 || head.Y > MonoHelper.Size.Y;
+        }
 
         /// <summary>
         /// Check if the snake collided with anything
@@ -149,7 +153,7 @@ namespace Snakez
         /// <returns></returns>
         public bool checkCollisions()
         {
-            if (head.X < 0 || head.X > MonoHelper.Size.X || head.Y < 0 || head.Y > MonoHelper.Size.Y)
+            if (hitWalls(head))
                 return true;
 
             else if (alive && hitSelf(head))
@@ -224,7 +228,7 @@ namespace Snakez
         public Color getRandomColor()
         {
             Random random = new Random(Guid.NewGuid().GetHashCode());
-            return new Color((byte)random.Next(50, 200), (byte)random.Next(50, 200), (byte)random.Next(50, 200));
+            return new Color((byte)random.Next(100, 200), (byte)random.Next(100, 200), (byte)random.Next(100, 200));
         }
 
         /// <summary>
