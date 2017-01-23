@@ -144,7 +144,7 @@ namespace Snakez
         }
         public bool hitWalls(Vector2 point)
         {
-            return head.X < 0 || head.X > MonoHelper.Size.X || head.Y < 0 || head.Y > MonoHelper.Size.Y;
+            return point.X < 0 || point.X > MonoHelper.Size.X || point.Y < 0 || point.Y > MonoHelper.Size.Y;
         }
 
         /// <summary>

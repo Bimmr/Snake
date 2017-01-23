@@ -84,25 +84,17 @@ namespace Snakez
                 Debug.WriteLine("Hit Self");
                 Vector2 willHit = getNextPoint();
 
-                direction = findDirection(willHit, body[findPos(willHit) - 1]);
+                direction = findDirection(willHit, body[findPos(willHit) + 1]);
                 return;
             }
-            if (hitWalls(getNextPoint()) && prevDirections.Count > 1)
+            if (hitWalls(getNextPoint()) && prevDirections.Count > 2)
             {
                 Debug.WriteLine("Hit Wall");
 
-                Direction ignoreDir = prevDirections[0];
-                Direction lastTravel = direction;
-
-
-                //TODO Make sure that if current is horizontal only listen to last horiztonal
-                for (int i = 0; i < prevDirections.Count; i++)
-                    if (ignoreDir != prevDirections[i])
-                        lastTravel = prevDirections[i];
-
-                direction = lastTravel;
-                return;
+                direction = getOpposite(prevDirections[1]);
                
+                return;
+
             }
 
             //If not hitting self, then choose random direction
@@ -118,10 +110,7 @@ namespace Snakez
                     break;
                 else
                     dirs.Remove(direction);
-
             }
-            
-
         }
         public new void update()
         {
@@ -132,8 +121,8 @@ namespace Snakez
             {
                 randomCounter = 0;
                 randomDelay = new Random().Next(moveDelay + 1, maxRandom);
-                prevDirections.Insert(0, direction);
                 getDirection();
+                addLastDirection(direction);
             }
 
             //Move
@@ -155,10 +144,10 @@ namespace Snakez
             //Check if it will collide
             if (willCollide(getNextPoint()))
             {
-                prevDirections.Insert(0, direction);
                 randomCounter = 0;
                 randomDelay = new Random().Next(200);
                 getDirection();
+                addLastDirection(direction);
             }
 
             //Check if it did collide
@@ -167,13 +156,26 @@ namespace Snakez
         }
 
         /// <summary>
+        /// Add the previous direction
+        /// </summary>
+        /// <param name="dir"></param>
+        private void addLastDirection(Direction dir)
+        {
+            if (prevDirections.Count == 0 || prevDirections[0] != dir)
+            {
+                Debug.WriteLine(dir);
+                prevDirections.Insert(0, direction);
+                if (prevDirections.Count > 4)
+                    prevDirections.RemoveAt(4);
+            }
+        }
+
+        /// <summary>
         /// Remove the last element of the body
         /// </summary>
         public new void removeTail()
         {
             score++;
-            if (prevDirections.Count > 1)
-                prevDirections.RemoveAt(prevDirections.Count - 1);
             body.RemoveAt(body.Count - 1);
         }
         /// <summary>
