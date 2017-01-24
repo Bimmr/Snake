@@ -20,7 +20,7 @@ namespace Snakez
         private List<Direction> prevDirections;
 
         public SnakeAI(GameScreen gameScreen, Vector2 location)
-        : base("AI", gameScreen, location, Keys.A, Keys.A, Keys.A, Keys.A)
+        : base("Mr. Snake", gameScreen, location, Keys.A, Keys.A, Keys.A, Keys.A)
         {
             randomDelay = new Random().Next(moveDelay + 1, maxRandom);
             prevDirections = new List<Direction>();
@@ -84,14 +84,16 @@ namespace Snakez
                 Debug.WriteLine("Hit Self");
                 Vector2 willHit = getNextPoint();
 
-                direction = findDirection(willHit, body[findPos(willHit) + 1]);
+                direction = getOpposite(findDirection(willHit, body[findPos(willHit) + 1]));
                 return;
             }
             if (hitWalls(getNextPoint()) && prevDirections.Count > 2)
             {
                 Debug.WriteLine("Hit Wall");
 
-                direction = getOpposite(prevDirections[1]);
+                direction = (prevDirections[1]);
+                if (willCollide(getNextPoint()))
+                    direction = getOpposite(direction);
                
                 return;
 

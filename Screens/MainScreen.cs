@@ -2,6 +2,7 @@
 using BimmCore.MonoGame.Components;
 using Microsoft.Xna.Framework;
 using BimmCore.MonoGame.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace Snakez.Screens
 {
@@ -14,39 +15,66 @@ namespace Snakez.Screens
         {
             background = new ScrollingBackground(SpriteHandler.mainBackground, new Vector2(0, 0), 2, Direction.Up);
 
-            string[] menuElements = {"Single Player", "Multiplayer", "Leaderboards", "Settings", "Exit"};
+            string[] menuElements = { "Single Player", "Multiplayer", "Leaderboards", "Settings", "Exit" };
             float menuX = MonoHelper.Middle.X - Menu.Size.Width / 2;
             float menuY = MonoHelper.Middle.Y - (Menu.Size.Height * (menuElements.Length)) / 2 + 50;
             menu = new Menu(new Vector2(menuX, menuY), (Color.LightGray * 0.6f), Color.White, FontHandler.menuFont);
 
             //Single Player
-            menu.addOption(menuElements[0], (b, s) => {
-                screenHandler.show("game");
-                GameScreen gs = (GameScreen)screenHandler.getCurrent();
-                gs.clearSnakes();
-                Vector2 pos = new Vector2(MonoHelper.Middle.X - Snake.size / 2, MonoHelper.Middle.Y - Snake.size / 2);
-                gs.addSnake(new Snake("Player", gs, new Vector2(pos.X * (Settings.SinglePlayerAI ? .5f : 1f), pos.Y), Settings.ControlsP1[0], Settings.ControlsP1[1], Settings.ControlsP1[2], Settings.ControlsP1[3]));
-                if(Settings.SinglePlayerAI)
-                    gs.addSnake(new SnakeAI(gs, new Vector2(pos.X * 1.5f, pos.Y)));
+            menu.addOption(menuElements[0], (b, s) =>
+            {
+                if (LastMouseState.LeftButton != ButtonState.Pressed)
+                {
+                    screenHandler.show("game");
+                    GameScreen gs = (GameScreen)screenHandler.getCurrent();
+                    gs.clearSnakes();
+                    Vector2 pos = new Vector2(MonoHelper.Middle.X - Snake.size / 2, MonoHelper.Middle.Y - Snake.size / 2);
+                    gs.addSnake(new Snake("Player", gs, new Vector2(pos.X * (Settings.SinglePlayerAI ? .5f : 1f), pos.Y), Settings.ControlsP1[0], Settings.ControlsP1[1], Settings.ControlsP1[2], Settings.ControlsP1[3]));
+                    if (Settings.SinglePlayerAI)
+                        gs.addSnake(new SnakeAI(gs, new Vector2(pos.X * 1.5f, pos.Y)));
+                }
             });
 
+
             //Multiplayer
-            menu.addOption(menuElements[1], (b, s) => {
-                screenHandler.show("game");
-                GameScreen gs = (GameScreen)screenHandler.getCurrent();
-                gs.clearSnakes();
-                Vector2 pos = new Vector2(MonoHelper.Middle.X - Snake.size / 2, MonoHelper.Middle.Y - Snake.size / 2);
-                gs.addSnake(new Snake("Player 1", gs, new Vector2(pos.X*.5f, pos.Y),Settings.ControlsP1[0], Settings.ControlsP1[1], Settings.ControlsP1[2], Settings.ControlsP1[3]));
-                gs.addSnake(new Snake("Player 2", gs, new Vector2(pos.X * 1.5f, pos.Y), Settings.ControlsP2[0], Settings.ControlsP2[1], Settings.ControlsP2[2], Settings.ControlsP2[3]));
+            menu.addOption(menuElements[1], (b, s) =>
+            {
+                if (LastMouseState.LeftButton != ButtonState.Pressed)
+                {
+                    screenHandler.show("game");
+                    GameScreen gs = (GameScreen)screenHandler.getCurrent();
+                    gs.clearSnakes();
+                    Vector2 pos = new Vector2(MonoHelper.Middle.X - Snake.size / 2, MonoHelper.Middle.Y - Snake.size / 2);
+                    gs.addSnake(new Snake("Player 1", gs, new Vector2(pos.X * .5f, pos.Y), Settings.ControlsP1[0], Settings.ControlsP1[1], Settings.ControlsP1[2], Settings.ControlsP1[3]));
+                    gs.addSnake(new Snake("Player 2", gs, new Vector2(pos.X * 1.5f, pos.Y), Settings.ControlsP2[0], Settings.ControlsP2[1], Settings.ControlsP2[2], Settings.ControlsP2[3]));
+                }
             });
 
             //Leaderboards(Single Player)
-            menu.addOption(menuElements[2], (b, s) => { screenHandler.show("leaderboards"); });
+            menu.addOption(menuElements[2], (b, s) =>
+            {
+                if (LastMouseState.LeftButton != ButtonState.Pressed)
+                {
+                    screenHandler.show("leaderboards");
+                }
+            });
 
             //Settings
-            menu.addOption(menuElements[3], (b, s) => { screenHandler.show("settings"); });
+            menu.addOption(menuElements[3], (b, s) =>
+            {
+                if (LastMouseState.LeftButton != ButtonState.Pressed)
+                {
+                    screenHandler.show("settings");
+                }
+            });
             //Exit
-            menu.addOption(menuElements[4], (b, s) => { MonoHelper.Game.Exit(); });
+            menu.addOption(menuElements[4], (b, s) =>
+            {
+                if (LastMouseState.LeftButton != ButtonState.Pressed)
+                {
+                    MonoHelper.Game.Exit();
+                }
+            });
         }
 
         public override void onHide()

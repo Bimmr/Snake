@@ -5,11 +5,11 @@ using BimmCore.MonoGame.Graphics;
 
 namespace Snakez.Screens
 {
-    public class SinglePlayer : Screen
+    public class LeaderboardsScreen : Screen
     {
        
 
-        public SinglePlayer()
+        public LeaderboardsScreen()
         {
            
         }
