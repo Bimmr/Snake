@@ -169,6 +169,7 @@ C:\Users\rbimm5674\Desktop\Snake\bin\Windows\x86\Debug\Content\Images\Powerup2.x
 C:\Users\rbimm5674\Desktop\Snake\bin\Windows\x86\Debug\Content\Images\Powerup3.xnb
 C:\Users\rbimm5674\Desktop\Snake\bin\Windows\x86\Debug\Snakez.exe
 C:\Users\rbimm5674\Desktop\Snake\bin\Windows\x86\Debug\Snakez.pdb
+C:\Users\rbimm5674\Desktop\Snake\bin\Windows\x86\Debug\BimmCore.dll
 C:\Users\rbimm5674\Desktop\Snake\bin\Windows\x86\Debug\MonoGame.Framework.dll
 C:\Users\rbimm5674\Desktop\Snake\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
 C:\Users\rbimm5674\Desktop\Snake\bin\Windows\x86\Debug\SharpDX.dll

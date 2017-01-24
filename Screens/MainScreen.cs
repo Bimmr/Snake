@@ -79,7 +79,6 @@ namespace Snakez.Screens
 
         public override void onHide()
         {
-            Game.IsMouseVisible = false;
         }
 
         public override void onShow()

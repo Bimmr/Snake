@@ -78,7 +78,7 @@ namespace Snakez
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+                screenHandler.show("main");
 
             screenHandler.getCurrent().Update(gameTime);
 

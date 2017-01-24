@@ -16,7 +16,7 @@ namespace Snakez
             Texture2D logoHeaderTex = game.Content.Load<Texture2D>("Images/MenuHeader");
 
             mainBackground = new Sprite(mainBackText,
-                new Rectangle(0, 20, mainBackText.Width, mainBackText.Height - 40));
+                new Rectangle(0, 150, mainBackText.Width, mainBackText.Height - 300));
             logoHeader = new Sprite(logoHeaderTex, new Rectangle(0, 0, logoHeaderTex.Width, logoHeaderTex.Height));
         }
     }

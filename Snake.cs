@@ -15,7 +15,6 @@ namespace Snakez
         public GameScreen gameScreen;
 
         public string name;
-        public int score;
         public Keys up, down, left, right;
         public Color color;
         public Direction direction;
@@ -65,7 +64,6 @@ namespace Snakez
         /// </summary>
         public void removeTail()
         {
-            score++;
             body.RemoveAt(body.Count - 1);
         }
 
@@ -128,9 +126,8 @@ namespace Snakez
         {
             foreach (Snake snake in gameScreen.getSnakes())
             {
-                if (snake.isAlive())
+                if (snake.isAlive() && !this.name.Equals(snake.name))
                 {
-                    if (this != snake)
                         foreach (Vector2 vec in snake.body)
                             if (getBox(point).Intersects(getBox(vec)))
                             {
@@ -194,8 +191,9 @@ namespace Snakez
                 removeTail();
             }
             //Check collisions
-            if (checkCollisions())
-                die();
+            if (moveCounter == 0)
+                if (checkCollisions())
+                    die();
         }
 
         /// <summary>
@@ -213,8 +211,8 @@ namespace Snakez
         /// </summary>
         public void draw()
         {
-            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "" + name, Utils.centerText(FontHandler.menuFont, name, new Rectangle((int)head.X - 25, 0, 50, 20)), color);
-            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "" + score, Utils.centerText(FontHandler.menuFont, ""+score, new Rectangle((int)head.X - 25, 20, 50, 20)), color);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "" + name, Utils.centerText(FontHandler.menuFont, name, new Rectangle((int)head.X - 25, 10, 50, 20)), color);
+
             foreach (Vector2 vec in body)
             {
                 Drawer.drawRectangle(getBox(vec), color);

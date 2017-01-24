@@ -17,6 +17,7 @@ namespace Snakez.Screens
         private GameState state;
         private int countDownCounter;
         private Snake lastAlive;
+        private int time;
 
         private Button returnButton;
 
@@ -28,11 +29,16 @@ namespace Snakez.Screens
             //3 Second Countdown
             this.countDownCounter = 30 * 3;
 
-            Rectangle returnButton = new Rectangle((int)MonoHelper.Middle.X - 50, (int)MonoHelper.Middle.Y, 100, 100);
-            this.returnButton = new Button(returnButton, FontHandler.menuFont, "Return", Color.White, (b, s) => {
-                if(LastMouseState.LeftButton != ButtonState.Pressed)
-                     screenHandler.show("main");
-            });
+            Rectangle returnButton = new Rectangle((int)MonoHelper.Middle.X - 50, (int)MonoHelper.Middle.Y+15, 100, 30);
+            this.returnButton = new Button(returnButton)
+                .setSpriteFont(FontHandler.menuFont).setText("Return").setTextColor(Color.White)
+                .setBoxColor(Color.SlateGray)
+                .setClickEvent((b, s) => {
+                    if (LastMouseState.LeftButton != ButtonState.Pressed)
+                        screenHandler.show("main");
+                })
+                .setHoverEvent((b, s) => b.setBoxColor(Color.SlateGray))
+                .setNotHoverEvent((b, s) => b.setBoxColor(Color.Gray));
         }
 
         public List<Snake> getSnakes()
@@ -51,6 +57,8 @@ namespace Snakez.Screens
 
         public override void onHide()
         {
+
+            //Reset Everything
             if (snakes != null)
             {
                 foreach (Snake snake in snakes)
@@ -58,11 +66,15 @@ namespace Snakez.Screens
 
                 snakes.Clear();
             }
+            this.state = GameState.Before;
+            this.countDownCounter = 30 * 3;
+            this.lastAlive = null;
+            this.time = 0;
         }
 
         public override void onShow()
         {
-
+            Game.IsMouseVisible = false;
         }
         public override void Draw(GameTime gameTime)
         {
@@ -73,6 +85,8 @@ namespace Snakez.Screens
             foreach (Snake snake in snakes)
                 if (snake.isAlive())
                     snake.draw();
+
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "" + (time/30), Utils.centerText(FontHandler.menuFont, "" + (time / 30), new Rectangle((int)MonoHelper.Middle.X-15, 0, 30, 20)), Color.White);
 
             if (state == GameState.Before) {
                 int timeLeft = (countDownCounter / 30) + 1;
@@ -106,6 +120,7 @@ namespace Snakez.Screens
 
                 //During the game
                 case GameState.Playing:
+                    time++;
                     int snakesAlive = 0;
 
                     foreach (Snake snake in snakes)

@@ -84,8 +84,16 @@ namespace Snakez
                 Debug.WriteLine("Hit Self");
                 Vector2 willHit = getNextPoint();
 
-                direction = getOpposite(findDirection(willHit, body[findPos(willHit) + 1]));
-                return;
+                try
+                {
+                    direction = getOpposite(findDirection(willHit, body[findPos(willHit) + 1]));
+
+                    if (willCollide(getNextPoint()))
+                        direction = getOpposite(direction);
+
+                    return;
+                }
+                catch (Exception) { }
             }
             if (hitWalls(getNextPoint()) && prevDirections.Count > 2)
             {
@@ -97,6 +105,20 @@ namespace Snakez
                
                 return;
 
+            }
+            if (hitOthers(getNextPoint()))
+            {
+
+                Debug.WriteLine("Hit Other");
+                try
+                {
+                    direction = (prevDirections[1]);
+                    if (willCollide(getNextPoint()))
+                        direction = getOpposite(direction);
+
+                    return;
+                }
+                catch (Exception) { }
             }
 
             //If not hitting self, then choose random direction
@@ -151,10 +173,10 @@ namespace Snakez
                 getDirection();
                 addLastDirection(direction);
             }
-
             //Check if it did collide
-            if (checkCollisions())
-                die();
+            if (moveCounter == 0)
+                if (checkCollisions())
+                    die();
         }
 
         /// <summary>
@@ -177,7 +199,6 @@ namespace Snakez
         /// </summary>
         public new void removeTail()
         {
-            score++;
             body.RemoveAt(body.Count - 1);
         }
         /// <summary>
