@@ -4,6 +4,8 @@ using Microsoft.Xna.Framework;
 using BimmCore.MonoGame.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using BimmCore.Misc;
+using System.Linq;
 
 namespace Snakez.Screens
 {
@@ -11,10 +13,12 @@ namespace Snakez.Screens
     {
 
         private Button returnButton;
-        private Dictionary<string, int> highscores;
+        private static FileHelper fileHelper;
 
         public LeaderboardsScreen()
         {
+            if(fileHelper == null)
+                fileHelper = new FileHelper("HighScores.txt");
 
             Rectangle returnButton = new Rectangle(0, 0, 150, 30);
             this.returnButton = new Button(returnButton)
@@ -47,19 +51,41 @@ namespace Snakez.Screens
         }
         public override void Update(GameTime gameTime)
         {
-
             returnButton.Update(gameTime);
 
             base.Update(gameTime);
         }
 
-        public void loadHighscores()
+        public static Dictionary<string, string> loadHighScores()
         {
+            Dictionary<string, string> highScores = fileHelper.getAll();
+            var ordered = highScores.OrderByDescending(i => i.Value);
 
+            return highScores;
         }
-        public void addHighScore()
+        public static void addScore(string name, int time)
         {
+            string foundLower = null;
+            Dictionary<string, string> highScores = loadHighScores();
 
+            foreach (KeyValuePair<string, string> e in highScores)
+            {
+                if (int.Parse(e.Value) > time)
+                    foundLower = e.Key;
+            }
+            if (highScores.Count > 10 && foundLower != null)
+            {
+                highScores.Remove(foundLower);
+                highScores.Add(name, ""+time);
+            }
+            if (foundLower != null)
+            {
+                fileHelper.clear();
+                foreach (KeyValuePair<string, string> e in highScores)
+                {
+                    fileHelper.add(e.Key, "" + e.Value);
+                }
+            }
         }
     }
 }
