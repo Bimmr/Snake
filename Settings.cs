@@ -17,5 +17,7 @@ namespace Snakez
         public static Keys[] ControlsP2 = new[] { Keys.Up, Keys.Down, Keys.Left, Keys.Right };
 
         public static bool SinglePlayerAI = true;
+
+        public static string Name = "Player 1";
     }
 }

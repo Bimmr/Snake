@@ -3,6 +3,7 @@ using BimmCore.MonoGame.Components;
 using Microsoft.Xna.Framework;
 using BimmCore.MonoGame.Graphics;
 using Microsoft.Xna.Framework.Input;
+using BimmCore.Misc;
 
 namespace Snakez.Screens
 {
@@ -29,7 +30,7 @@ namespace Snakez.Screens
                     GameScreen gs = (GameScreen)screenHandler.getCurrent();
                     gs.clearSnakes();
                     Vector2 pos = new Vector2(MonoHelper.Middle.X - Snake.size / 2, MonoHelper.Middle.Y - Snake.size / 2);
-                    gs.addSnake(new Snake("Player", gs, new Vector2(pos.X * (Settings.SinglePlayerAI ? .5f : 1f), pos.Y), Settings.ControlsP1[0], Settings.ControlsP1[1], Settings.ControlsP1[2], Settings.ControlsP1[3]));
+                    gs.addSnake(new Snake(Settings.Name, gs, new Vector2(pos.X * (Settings.SinglePlayerAI ? .5f : 1f), pos.Y), Settings.ControlsP1[0], Settings.ControlsP1[1], Settings.ControlsP1[2], Settings.ControlsP1[3]));
                     if (Settings.SinglePlayerAI)
                         gs.addSnake(new SnakeAI(gs, new Vector2(pos.X * 1.5f, pos.Y)));
                 }
@@ -45,7 +46,7 @@ namespace Snakez.Screens
                     GameScreen gs = (GameScreen)screenHandler.getCurrent();
                     gs.clearSnakes();
                     Vector2 pos = new Vector2(MonoHelper.Middle.X - Snake.size / 2, MonoHelper.Middle.Y - Snake.size / 2);
-                    gs.addSnake(new Snake("Player 1", gs, new Vector2(pos.X * .5f, pos.Y), Settings.ControlsP1[0], Settings.ControlsP1[1], Settings.ControlsP1[2], Settings.ControlsP1[3]));
+                    gs.addSnake(new Snake(Settings.Name, gs, new Vector2(pos.X * .5f, pos.Y), Settings.ControlsP1[0], Settings.ControlsP1[1], Settings.ControlsP1[2], Settings.ControlsP1[3]));
                     gs.addSnake(new Snake("Player 2", gs, new Vector2(pos.X * 1.5f, pos.Y), Settings.ControlsP2[0], Settings.ControlsP2[1], Settings.ControlsP2[2], Settings.ControlsP2[3]));
                 }
             });

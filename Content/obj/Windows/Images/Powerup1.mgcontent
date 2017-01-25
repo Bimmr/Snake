@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/rbimm5674/Desktop/Snake/Content/Images/Powerup1.png</SourceFile>
-  <SourceTime>2017-01-24T14:24:36.5245979-05:00</SourceTime>
-  <DestFile>C:/Users/rbimm5674/Desktop/Snake/Content/bin/Windows/Images/Powerup1.xnb</DestFile>
-  <DestTime>2017-01-24T15:34:40.2438305-05:00</DestTime>
+  <SourceFile>C:/Users/Randy/RiderProjects/Snake/Content/Images/Powerup1.png</SourceFile>
+  <SourceTime>2017-01-20T15:03:11.9668619-05:00</SourceTime>
+  <DestFile>C:/Users/Randy/RiderProjects/Snake/Content/bin/Windows/Images/Powerup1.xnb</DestFile>
+  <DestTime>2017-01-24T20:11:06.3678961-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2016-03-30T02:36:08-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

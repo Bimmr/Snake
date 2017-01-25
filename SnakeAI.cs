@@ -1,14 +1,11 @@
-﻿using BimmCore.MonoGame;
-using BimmCore.MonoGame.Graphics;
+﻿using BimmCore.Misc;
+using BimmCore.MonoGame;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Snakez.Screens;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Snakez
 {
@@ -34,7 +31,7 @@ namespace Snakez
         /// <returns></returns>
         public bool willCollide(Vector2 point)
         {
-            if (point.X < 0 || point.X > MonoHelper.Size.X || point.Y < 0 || point.Y > MonoHelper.Size.Y)
+            if (hitWalls(point))
                 return true;
 
             if (alive && hitSelf(point))
@@ -86,10 +83,10 @@ namespace Snakez
 
                 try
                 {
-                    direction = getOpposite(findDirection(willHit, body[findPos(willHit) + 1]));
+                    direction = Directions.getOpposite(findDirection(willHit, body[findPos(willHit) + 1]));
 
                     if (willCollide(getNextPoint()))
-                        direction = getOpposite(direction);
+                        direction = Directions.getOpposite(direction);
 
                     return;
                 }
@@ -101,7 +98,7 @@ namespace Snakez
 
                 direction = (prevDirections[1]);
                 if (willCollide(getNextPoint()))
-                    direction = getOpposite(direction);
+                    direction = Directions.getOpposite(direction);
                
                 return;
 
@@ -114,7 +111,7 @@ namespace Snakez
                 {
                     direction = (prevDirections[1]);
                     if (willCollide(getNextPoint()))
-                        direction = getOpposite(direction);
+                        direction = Directions.getOpposite(direction);
 
                     return;
                 }
@@ -201,27 +198,6 @@ namespace Snakez
         {
             body.RemoveAt(body.Count - 1);
         }
-        /// <summary>
-        /// Get the opposite of the direction given
-        /// </summary>
-        /// <param name="d"></param>
-        /// <returns></returns>
-        public Direction getOpposite(Direction d)
-        {
-            switch (d)
-            {
-                case Direction.Up:
-                    return Direction.Down;
-                case Direction.Down:
-                    return Direction.Up;
-                case Direction.Left:
-                    return Direction.Right;
-                case Direction.Right:
-                    return Direction.Left;
-                default:
-                    return Direction.Up;
-            }
-        }
         private int findPos(Vector2 vec)
         {
             int pos = -1;
@@ -243,14 +219,6 @@ namespace Snakez
             }
             return false;
 
-        }
-        private bool isVertical(Direction dir)
-        {
-            return dir == Direction.Up || dir == Direction.Down;
-        }
-        private bool isHorizontal(Direction dir)
-        {
-            return dir == Direction.Down || dir == Direction.Up;
         }
     }
 }

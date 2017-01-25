@@ -3,6 +3,7 @@ using BimmCore.MonoGame.Components;
 using Microsoft.Xna.Framework;
 using BimmCore.MonoGame.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace Snakez.Screens
 {
@@ -10,6 +11,8 @@ namespace Snakez.Screens
     {
 
         private Button returnButton;
+        private Dictionary<string, int> highscores;
+
         public LeaderboardsScreen()
         {
 
@@ -48,6 +51,15 @@ namespace Snakez.Screens
             returnButton.Update(gameTime);
 
             base.Update(gameTime);
+        }
+
+        public void loadHighscores()
+        {
+
+        }
+        public void addHighScore()
+        {
+
         }
     }
 }

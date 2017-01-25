@@ -1,18 +1,21 @@
-﻿using BimmCore.MonoGame;
+﻿using BimmCore.Misc;
+using BimmCore.MonoGame;
 using BimmCore.MonoGame.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Snakez.Screens;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace Snakez
 {
     public class Snake
     {
 
+        public static Color[] possibleColors = new[] { Color.Blue, Color.Green, Color.Red, Color.Yellow, Color.Purple, Color.White };
+
         public GameScreen gameScreen;
+        public Drawer drawer;
 
         public string name;
         public Keys up, down, left, right;
@@ -45,6 +48,7 @@ namespace Snakez
             this.color = getRandomColor();
             this.direction = Direction.Up;
             this.alive = true;
+            this.drawer = new Drawer();
 
             this.up = up;
             this.down = down;
@@ -141,7 +145,7 @@ namespace Snakez
         }
         public bool hitWalls(Vector2 point)
         {
-            return point.X < 0 || point.X > MonoHelper.Size.X || point.Y < 0 || point.Y > MonoHelper.Size.Y;
+            return point.X < 0 || point.X > MonoHelper.Size.X || point.Y < 30 || point.Y > MonoHelper.Size.Y;
         }
 
         /// <summary>
@@ -211,11 +215,11 @@ namespace Snakez
         /// </summary>
         public void draw()
         {
-            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "" + name, Utils.centerText(FontHandler.menuFont, name, new Rectangle((int)head.X - 25, 10, 50, 20)), color);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "" + name, Utils.centerText(FontHandler.menuFont, name, new Rectangle((int)head.X - 25, 15, 50, 15)), color);
 
             foreach (Vector2 vec in body)
             {
-                Drawer.drawRectangle(getBox(vec), color);
+                drawer.drawRectangleP(getBox(vec), color);
             }
 
         }
@@ -226,7 +230,7 @@ namespace Snakez
         public Color getRandomColor()
         {
             Random random = new Random(Guid.NewGuid().GetHashCode());
-            return new Color((byte)random.Next(100, 200), (byte)random.Next(100, 200), (byte)random.Next(100, 200));
+            return possibleColors[random.Next(possibleColors.Length)];
         }
 
         /// <summary>

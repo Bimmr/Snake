@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using BimmCore.MonoGame;
 using System.Diagnostics;
 using Microsoft.Xna.Framework.Input;
+using BimmCore.MonoGame.Graphics;
 
 namespace Snakez.Screens
 {
@@ -80,6 +81,9 @@ namespace Snakez.Screens
         {
             SpriteHandler.mainBackground.draw(MonoHelper.SpriteBatch,
                 new Vector2(0, 0));
+            Drawer.drawRectangle(new Rectangle(0, 0, (int)MonoHelper.Size.X, 30), Color.White);
+            Drawer.drawRectangle(new Rectangle(0, 0, (int)MonoHelper.Size.X, 29), Color.LightGray);
+            Drawer.drawRectangle(new Rectangle((int)MonoHelper.Middle.X - 20, 0, 40, 20), Color.DarkGray);
 
 
             foreach (Snake snake in snakes)
