@@ -19,7 +19,7 @@ namespace Snakez
         //Controls for Player 3
         public static Keys[] ControlsP3 = new[] { Keys.O, Keys.L, Keys.K, Keys.OemSemicolon };
 
-        public static bool ThreePlayers = true;
+        public static bool ThreePlayers = false;
 
         public static bool SinglePlayerAI = true;
 

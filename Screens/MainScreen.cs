@@ -46,7 +46,7 @@ namespace Snakez.Screens
                     GameScreen gs = (GameScreen)screenHandler.getCurrent();
                     gs.clearSnakes();
                     Vector2 pos = new Vector2(MonoHelper.Middle.X - Snake.size / 2, MonoHelper.Middle.Y - Snake.size / 2);
-                    gs.addSnake(new Snake(Settings.Name, gs, new Vector2(pos.X * .3f, pos.Y), Settings.ControlsP1[0], Settings.ControlsP1[1], Settings.ControlsP1[2], Settings.ControlsP1[3]));
+                    gs.addSnake(new Snake(Settings.Name, gs, new Vector2(pos.X * (Settings.ThreePlayers ? .3f : .5f), pos.Y), Settings.ControlsP1[0], Settings.ControlsP1[1], Settings.ControlsP1[2], Settings.ControlsP1[3]));
                     gs.addSnake(new Snake("Player 2", gs, new Vector2(pos.X * (Settings.ThreePlayers ? 1f : 1.5f), pos.Y), Settings.ControlsP2[0], Settings.ControlsP2[1], Settings.ControlsP2[2], Settings.ControlsP2[3]));
                     if(Settings.ThreePlayers)
                         gs.addSnake(new Snake("Player 3", gs, new Vector2(pos.X * 1.9f, pos.Y), Settings.ControlsP3[0], Settings.ControlsP3[1], Settings.ControlsP3[2], Settings.ControlsP3[3]));

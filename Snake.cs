@@ -14,6 +14,12 @@ namespace Snakez
 
         public static Color[] possibleColors = new[] { Color.Blue, Color.Green, Color.Red, Color.Yellow, Color.Purple, Color.White };
 
+        public static int size = 10;
+        public static int moveDelay = 3;
+        public static int removeDelay = 5;
+        public static int spacing = 2;
+
+
         public GameScreen gameScreen;
         public Drawer drawer;
 
@@ -23,10 +29,7 @@ namespace Snakez
         public Direction direction;
         public List<Vector2> body;
 
-        public static int size = 10;
-        public int moveDelay = 3;
         public int moveCounter;
-        public int removeDelay = 5;
         public int removeCounter;
 
         public Action<Snake> onDeath;
@@ -89,16 +92,16 @@ namespace Snakez
             switch (direction)
             {
                 case Direction.Up:
-                    next.Y -= size + 1;
+                    next.Y -= size + spacing;
                     break;
                 case Direction.Down:
-                    next.Y += size + 1;
+                    next.Y += size + spacing;
                     break;
                 case Direction.Left:
-                    next.X -= size + 1;
+                    next.X -= size + spacing;
                     break;
                 case Direction.Right:
-                    next.X += size + 1;
+                    next.X += size + spacing;
                     break;
             }
             return next;
@@ -215,7 +218,7 @@ namespace Snakez
         /// </summary>
         public void draw()
         {
-            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "" + name, Utils.centerText(FontHandler.menuFont, name, new Rectangle((int)head.X - 25, 15, 50, 15)), color);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "" + name, Utils.centerText(FontHandler.menuFont, name, new Rectangle((int)head.X - 25, 10, 50, 15)), color);
 
             foreach (Vector2 vec in body)
             {

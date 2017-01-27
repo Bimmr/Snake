@@ -82,7 +82,7 @@ namespace Snakez
                 if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                     screenHandler.show("main");
 
-                screenHandler.getCurrent().Update(gameTime);
+                screenHandler.Update(gameTime);
 
                 base.Update(gameTime);
             }

@@ -81,8 +81,8 @@ namespace Snakez.Screens
         {
             SpriteHandler.mainBackground.draw(MonoHelper.SpriteBatch,
                 new Vector2(0, 0));
-            Drawer.drawRectangle(new Rectangle(0, 0, (int)MonoHelper.Size.X, 30), Color.White);
-            Drawer.drawRectangle(new Rectangle(0, 0, (int)MonoHelper.Size.X, 29), Color.LightGray);
+            Drawer.drawRectangle(new Rectangle(0, 0, (int)MonoHelper.Size.X, 26), Color.White);
+            Drawer.drawRectangle(new Rectangle(0, 0, (int)MonoHelper.Size.X, 25), Color.LightGray);
             Drawer.drawRectangle(new Rectangle((int)MonoHelper.Middle.X - 20, 0, 40, 20), Color.DarkGray);
 
 
