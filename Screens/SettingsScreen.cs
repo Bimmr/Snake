@@ -1,7 +1,7 @@
 ﻿using BimmCore.MonoGame;
 using BimmCore.MonoGame.Components;
-using Microsoft.Xna.Framework;
 using BimmCore.MonoGame.Graphics;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
 namespace Snakez.Screens
@@ -45,9 +45,34 @@ namespace Snakez.Screens
             SpriteHandler.mainBackground.draw(MonoHelper.SpriteBatch,
                 new Vector2(0, 0));
 
-            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Player 1 Settings", new Vector2(52, 102), Color.Black);
+            Drawer.drawRectangle(new Rectangle(15, 80, 225, 350), Color.White);
+            Drawer.drawRectangle(new Rectangle(16, 81, 223, 348), Color.Gray);
             MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Player 1 Settings", new Vector2(50, 100), Color.White);
             MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Name: ", new Vector2(25, 135), Color.White);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Up: ", new Vector2(25, 205), Color.White);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Down: ", new Vector2(25, 240), Color.White);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Left: ", new Vector2(25, 275), Color.White);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Right: ", new Vector2(25, 310), Color.White);
+
+
+            Drawer.drawRectangle(new Rectangle(285, 80, 225, 350), Color.White);
+            Drawer.drawRectangle(new Rectangle(286, 81, 223, 348), Color.Gray);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Player 1 Settings", new Vector2(50, 100), Color.White);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Name: ", new Vector2(25, 135), Color.White);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Up: ", new Vector2(25, 205), Color.White);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Down: ", new Vector2(25, 240), Color.White);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Left: ", new Vector2(25, 275), Color.White);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Right: ", new Vector2(25, 310), Color.White);
+
+
+            Drawer.drawRectangle(new Rectangle(585, 80, 225, 350), Color.White);
+            Drawer.drawRectangle(new Rectangle(586, 81, 223, 348), Color.Gray);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Player 1 Settings", new Vector2(50, 100), Color.White);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Name: ", new Vector2(25, 135), Color.White);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Up: ", new Vector2(25, 205), Color.White);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Down: ", new Vector2(25, 240), Color.White);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Left: ", new Vector2(25, 275), Color.White);
+            MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Right: ", new Vector2(25, 310), Color.White);
 
             returnButton.Draw(gameTime);
             playerName.Draw(gameTime);
