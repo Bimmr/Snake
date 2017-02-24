@@ -12,7 +12,7 @@ namespace Snakez.Screens
     public enum GameState { Before, Playing, After }
     public class GameScreen : Screen
     {
-
+  
 
         private List<Snake> snakes;
         private GameState state;
@@ -63,8 +63,10 @@ namespace Snakez.Screens
             if (snakes != null)
             {
                 foreach (Snake snake in snakes)
+                {
                     snake.body.Clear();
 
+                }
                 snakes.Clear();
             }
             this.state = GameState.Before;

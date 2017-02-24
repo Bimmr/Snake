@@ -4,12 +4,12 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/rbimm5674/Desktop/Snake/Content/Images/Background.jpg</File>
-    <File>C:/Users/rbimm5674/Desktop/Snake/Content/Images/Icon.png</File>
-    <File>C:/Users/rbimm5674/Desktop/Snake/Content/Images/MenuHeader.png</File>
-    <File>C:/Users/rbimm5674/Desktop/Snake/Content/Images/Powerup1.png</File>
-    <File>C:/Users/rbimm5674/Desktop/Snake/Content/Images/Powerup2.png</File>
-    <File>C:/Users/rbimm5674/Desktop/Snake/Content/Images/Powerup3.png</File>
-    <File>C:/Users/rbimm5674/Desktop/Snake/Content/Font/MenuFont.spritefont</File>
+    <File>C:/Users/Randy/RiderProjects/Snake/Content/Images/Background.jpg</File>
+    <File>C:/Users/Randy/RiderProjects/Snake/Content/Images/Icon.png</File>
+    <File>C:/Users/Randy/RiderProjects/Snake/Content/Images/MenuHeader.png</File>
+    <File>C:/Users/Randy/RiderProjects/Snake/Content/Images/Powerup1.png</File>
+    <File>C:/Users/Randy/RiderProjects/Snake/Content/Images/Powerup2.png</File>
+    <File>C:/Users/Randy/RiderProjects/Snake/Content/Images/Powerup3.png</File>
+    <File>C:/Users/Randy/RiderProjects/Snake/Content/Font/MenuFont.spritefont</File>
   </SourceFiles>
 </SourceFileCollection>

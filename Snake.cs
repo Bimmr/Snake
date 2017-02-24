@@ -21,7 +21,6 @@ namespace Snakez
 
 
         public GameScreen gameScreen;
-        public Drawer drawer;
 
         public string name;
         public Keys up, down, left, right;
@@ -51,7 +50,6 @@ namespace Snakez
             this.color = getRandomColor();
             this.direction = Direction.Up;
             this.alive = true;
-            this.drawer = new Drawer();
 
             this.up = up;
             this.down = down;
@@ -222,7 +220,7 @@ namespace Snakez
 
             foreach (Vector2 vec in body)
             {
-                drawer.drawRectangleP(getBox(vec), color);
+                Drawer.drawRectangle(getBox(vec), color);
             }
 
         }
