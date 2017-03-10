@@ -12,12 +12,12 @@ namespace Snakez
     public class Snake
     {
 
-        public static Color[] possibleColors = new[] { Color.Blue, Color.LawnGreen, Color.LightBlue, Color.HotPink, Color.Fuchsia, Color.Red, Color.Yellow, Color.Orange, Color.LightGray };
+        public static Color[] possibleColors = new[] { Color.Azure, Color.Beige, Color.Chartreuse, Color.Crimson, Color.Cyan, Color.LightSalmon, Color.Lime, Color.Linen, Color.MintCream, Color.Moccasin, Color.Blue, Color.LawnGreen, Color.LightBlue, Color.HotPink, Color.Fuchsia, Color.Red, Color.Yellow, Color.Orange, Color.LightGray };
 
-        public static int size = 10;
+        public static int size = 9;
         public int moveDelay = 3;
         public int removeDelay = 5;
-        public int spacing = 2;
+        public float spacing = 1f;
 
 
         public GameScreen gameScreen;
@@ -146,7 +146,7 @@ namespace Snakez
         }
         public bool hitWalls(Vector2 point)
         {
-            return point.X < 0 || point.X > MonoHelper.Size.X || point.Y < 30 || point.Y > MonoHelper.Size.Y;
+            return point.X- (size / 2) < 0 || point.X+(size/2) > MonoHelper.Size.X || point.Y- (size / 2) < 30 || point.Y+ (size / 2) > MonoHelper.Size.Y;
         }
 
         /// <summary>
@@ -219,7 +219,7 @@ namespace Snakez
             MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "" + name, Utils.centerText(FontHandler.menuFont, name, new Rectangle((int)head.X - 25, 10, 50, 15)), color);
 
             if(body.Count > 1)
-                Drawer.drawRectangle(getBox(body[0]), Color.White);
+                Drawer.drawRectangle(getBox(body[0]), new Color(color.R*.25f, color.G*.25f, color.B*.25f));
 
             for (int i = body.Count > 1 ? 1 : 0; i < body.Count; i++)
                 Drawer.drawRectangle(getBox(body[i]), color);
