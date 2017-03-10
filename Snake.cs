@@ -12,12 +12,12 @@ namespace Snakez
     public class Snake
     {
 
-        public static Color[] possibleColors = new[] { Color.Blue, Color.Green, Color.Red, Color.Yellow, Color.Purple, Color.White };
+        public static Color[] possibleColors = new[] { Color.Blue, Color.LawnGreen, Color.LightBlue, Color.HotPink, Color.Fuchsia, Color.Red, Color.Yellow, Color.Orange, Color.LightGray };
 
         public static int size = 10;
-        public static int moveDelay = 3;
-        public static int removeDelay = 5;
-        public static int spacing = 2;
+        public int moveDelay = 3;
+        public int removeDelay = 5;
+        public int spacing = 2;
 
 
         public GameScreen gameScreen;
@@ -133,11 +133,11 @@ namespace Snakez
             {
                 if (snake.isAlive() && !this.name.Equals(snake.name))
                 {
-                        foreach (Vector2 vec in snake.body)
-                            if (getBox(point).Intersects(getBox(vec)))
-                            {
-                                return true;
-                            }
+                    foreach (Vector2 vec in snake.body)
+                        if (getBox(point).Intersects(getBox(vec)))
+                        {
+                            return true;
+                        }
                     if (!alive)
                         break;
                 }
@@ -172,13 +172,13 @@ namespace Snakez
         {
             //Listen to keys
             KeyboardState ks = Keyboard.GetState();
-            if (ks.IsKeyDown(up))
+            if (ks.IsKeyDown(up) && direction != Direction.Down)
                 direction = Direction.Up;
-            else if (ks.IsKeyDown(down))
+            else if (ks.IsKeyDown(down) && direction != Direction.Up)
                 direction = Direction.Down;
-            else if (ks.IsKeyDown(left))
+            else if (ks.IsKeyDown(left) && direction != Direction.Right)
                 direction = Direction.Left;
-            else if (ks.IsKeyDown(right))
+            else if (ks.IsKeyDown(right) && direction != Direction.Left)
                 direction = Direction.Right;
 
             //Move
@@ -218,10 +218,12 @@ namespace Snakez
         {
             MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "" + name, Utils.centerText(FontHandler.menuFont, name, new Rectangle((int)head.X - 25, 10, 50, 15)), color);
 
-            foreach (Vector2 vec in body)
-            {
-                Drawer.drawRectangle(getBox(vec), color);
-            }
+            if(body.Count > 1)
+                Drawer.drawRectangle(getBox(body[0]), Color.White);
+
+            for (int i = body.Count > 1 ? 1 : 0; i < body.Count; i++)
+                Drawer.drawRectangle(getBox(body[i]), color);
+
 
         }
         /// <summary>
@@ -231,7 +233,11 @@ namespace Snakez
         public Color getRandomColor()
         {
             Random random = new Random(Guid.NewGuid().GetHashCode());
-            return possibleColors[random.Next(possibleColors.Length)];
+            Color c = possibleColors[random.Next(possibleColors.Length)];
+            foreach (Snake s in gameScreen.getSnakes())
+                if (s.color == c)
+                    c = getRandomColor();
+            return c;
         }
 
         /// <summary>

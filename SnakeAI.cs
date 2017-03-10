@@ -17,11 +17,20 @@ namespace Snakez
         private List<Direction> prevDirections;
 
         public SnakeAI(GameScreen gameScreen, Vector2 location)
-        : base("Mr. Snake", gameScreen, location, Keys.A, Keys.A, Keys.A, Keys.A)
+        : this("Mr. Snake", gameScreen, location)
+        {
+            
+        }
+        public SnakeAI(string name, GameScreen gameScreen, Vector2 location)
+        : base(name, gameScreen, location, Keys.A, Keys.A, Keys.A, Keys.A)
         {
             randomDelay = new Random().Next(moveDelay + 1, maxRandom);
             prevDirections = new List<Direction>();
-
+            getDirection();
+            /*this.moveDelay = 1;
+            this.removeDelay = 3;
+            this.spacing = 2;
+            */
         }
 
         /// <summary>
@@ -78,7 +87,7 @@ namespace Snakez
             //If will hit self, make sure to not trap self
             if (hitSelf(getNextPoint()))
             {
-                Debug.WriteLine("Hit Self");
+                Debug.WriteLine(name + ": Hit Self");
                 Vector2 willHit = getNextPoint();
 
                 try
@@ -94,7 +103,7 @@ namespace Snakez
             }
             if (hitWalls(getNextPoint()) && prevDirections.Count > 2)
             {
-                Debug.WriteLine("Hit Wall");
+                Debug.WriteLine(name + ": Hit Wall");
 
                 direction = (prevDirections[1]);
                 if (willCollide(getNextPoint()))
@@ -106,7 +115,7 @@ namespace Snakez
             if (hitOthers(getNextPoint()))
             {
 
-                Debug.WriteLine("Hit Other");
+                Debug.WriteLine(name + ": Hit Other");
                 try
                 {
                     direction = (prevDirections[1]);
@@ -120,7 +129,7 @@ namespace Snakez
 
             //If not hitting self, then choose random direction
 
-            Debug.WriteLine("Random Direction");
+            Debug.WriteLine(name + ": Random Direction");
             //Try going all 4 directions(In a random order), and if nothing works give up
             Random r = new Random();
             List<Direction> dirs = new List<Direction> { Direction.Up, Direction.Down, Direction.Left, Direction.Right };

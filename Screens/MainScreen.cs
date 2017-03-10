@@ -16,7 +16,7 @@ namespace Snakez.Screens
         {
             background = new ScrollingBackground(SpriteHandler.mainBackground, new Vector2(0, 0), 2, Direction.Up);
 
-            string[] menuElements = { "Single Player", "Multiplayer", "Leaderboards", "Settings", "Exit" };
+            string[] menuElements = { "Single Player", "Multiplayer", "AI", "Leaderboards", "Settings", "Exit" };
             float menuX = MonoHelper.Middle.X - Menu.Size.Width / 2;
             float menuY = MonoHelper.Middle.Y - (Menu.Size.Height * (menuElements.Length)) / 2 + 50;
             menu = new Menu(new Vector2(menuX, menuY), (Color.LightGray * 0.6f), Color.White, FontHandler.menuFont);
@@ -48,13 +48,34 @@ namespace Snakez.Screens
                     Vector2 pos = new Vector2(MonoHelper.Middle.X - Snake.size / 2, MonoHelper.Middle.Y - Snake.size / 2);
                     gs.addSnake(new Snake(Settings.Name, gs, new Vector2(pos.X * (Settings.ThreePlayers ? .3f : .5f), pos.Y), Settings.ControlsP1[0], Settings.ControlsP1[1], Settings.ControlsP1[2], Settings.ControlsP1[3]));
                     gs.addSnake(new Snake("Player 2", gs, new Vector2(pos.X * (Settings.ThreePlayers ? 1f : 1.5f), pos.Y), Settings.ControlsP2[0], Settings.ControlsP2[1], Settings.ControlsP2[2], Settings.ControlsP2[3]));
-                    if(Settings.ThreePlayers)
+                    if (Settings.ThreePlayers)
                         gs.addSnake(new Snake("Player 3", gs, new Vector2(pos.X * 1.9f, pos.Y), Settings.ControlsP3[0], Settings.ControlsP3[1], Settings.ControlsP3[2], Settings.ControlsP3[3]));
                 }
             });
 
-            //Leaderboards(Single Player)
+            //AI
             menu.addOption(menuElements[2], (b, s) =>
+            {
+                if (LastMouseState.LeftButton != ButtonState.Pressed)
+                {
+                    screenHandler.show("game");
+                    GameScreen gs = (GameScreen)screenHandler.getCurrent();
+                    gs.clearSnakes();
+                    Vector2 pos = new Vector2(MonoHelper.Middle.X - Snake.size / 2, MonoHelper.Middle.Y - Snake.size / 2);
+                    gs.addSnake(new SnakeAI("Mr. Snake", gs, new Vector2(10, pos.Y)));
+                    gs.addSnake(new SnakeAI("Mr. Snake2", gs, new Vector2(110, pos.Y)));
+                    gs.addSnake(new SnakeAI("Mr. Snake3", gs, new Vector2(210, pos.Y)));
+                    gs.addSnake(new SnakeAI("Mr. Snake4", gs, new Vector2(310, pos.Y)));
+                    gs.addSnake(new SnakeAI("Mr. Snake5", gs, new Vector2(410, pos.Y)));
+                    gs.addSnake(new SnakeAI("Mr. Snake6", gs, new Vector2(510, pos.Y)));
+                    gs.addSnake(new SnakeAI("Mr. Snake7", gs, new Vector2(610, pos.Y)));
+                    gs.addSnake(new SnakeAI("Mr. Snake8", gs, new Vector2(710, pos.Y)));
+                    gs.addSnake(new SnakeAI("Mr. Snake9", gs, new Vector2(800, pos.Y)));
+                }
+            });
+
+            //Leaderboards(Single Player)
+            menu.addOption(menuElements[3], (b, s) =>
             {
                 if (LastMouseState.LeftButton != ButtonState.Pressed)
                 {
@@ -63,7 +84,7 @@ namespace Snakez.Screens
             });
 
             //Settings
-            menu.addOption(menuElements[3], (b, s) =>
+            menu.addOption(menuElements[4], (b, s) =>
             {
                 if (LastMouseState.LeftButton != ButtonState.Pressed)
                 {
@@ -71,7 +92,7 @@ namespace Snakez.Screens
                 }
             });
             //Exit
-            menu.addOption(menuElements[4], (b, s) =>
+            menu.addOption(menuElements[5], (b, s) =>
             {
                 if (LastMouseState.LeftButton != ButtonState.Pressed)
                 {
@@ -94,7 +115,7 @@ namespace Snakez.Screens
             background.draw();
             menu.Draw(gameTime);
             SpriteHandler.logoHeader.draw(MonoHelper.SpriteBatch,
-                new Vector2(MonoHelper.Middle.X - SpriteHandler.logoHeader.getWidth() / 2, 0));
+                new Vector2(MonoHelper.Middle.X - SpriteHandler.logoHeader.getWidth() / 2, -25));
 
             MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, SnakeGame.AUTHOR,
                 new Vector2(5, MonoHelper.Size.Y - 20), Color.Gray);

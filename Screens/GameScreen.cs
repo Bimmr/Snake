@@ -19,6 +19,7 @@ namespace Snakez.Screens
         private int countDownCounter;
         private Snake lastAlive;
         private int time;
+        private bool paused;
 
         private Button returnButton;
 
@@ -111,43 +112,49 @@ namespace Snakez.Screens
         }
         public override void Update(GameTime gameTime)
         {
-
-            switch (state)
+            if (!paused)
             {
-                //Before the game
-                case GameState.Before:
-                    if (countDownCounter > 0)
-                        countDownCounter--;
-                    else
-                    {
-                        state = GameState.Playing;
-                    }
-                    break;
-
-                //During the game
-                case GameState.Playing:
-                    time++;
-                    int snakesAlive = 0;
-
-                    foreach (Snake snake in snakes)
-                        if (snake.isAlive())
+                switch (state)
+                {
+                    //Before the game
+                    case GameState.Before:
+                        if (countDownCounter > 0)
+                            countDownCounter--;
+                        else
                         {
-                            snakesAlive++;
-                            lastAlive = snake;
-                            if (snake.name == "Mr. Snake")
-                                ((SnakeAI)snake).update();
-                            else
-                                snake.update();
+                            state = GameState.Playing;
                         }
-                    if (snakesAlive == 1)
-                        endGame();
-                    break;
+                        break;
 
-                //After the game
-                case GameState.After:
-                    returnButton.Update(gameTime);
-                    break;
+                    //During the game
+                    case GameState.Playing:
+                        time++;
+                        int snakesAlive = 0;
+
+                        foreach (Snake snake in snakes)
+                            if (snake.isAlive())
+                            {
+                                snakesAlive++;
+                                lastAlive = snake;
+                                if (snake.name.StartsWith("Mr. Snake"))
+                                    ((SnakeAI)snake).update();
+                                else
+                                    snake.update();
+                            }
+                        if (snakesAlive == 1)
+                            endGame();
+                        break;
+
+                    //After the game
+                    case GameState.After:
+                        returnButton.Update(gameTime);
+                        break;
+                }
             }
+
+            if (CurKeyboardState.IsKeyDown(Keys.Space) && LastKeyboardState.IsKeyUp(Keys.Space))
+                paused = !paused;
+
             base.Update(gameTime);
         }
         public void endGame()
