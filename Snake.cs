@@ -219,7 +219,7 @@ namespace Snakez
             MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "" + name, Utils.centerText(FontHandler.menuFont, name, new Rectangle((int)head.X - 25, 10, 50, 15)), color);
 
             if(body.Count > 1)
-                Drawer.drawRectangle(getBox(body[0]), new Color(color.R*.25f, color.G*.25f, color.B*.25f));
+                Drawer.drawRectangle(getBox(body[0]), new Color(color.R*.95f, color.G*.95f, color.B*.95f));
 
             for (int i = body.Count > 1 ? 1 : 0; i < body.Count; i++)
                 Drawer.drawRectangle(getBox(body[i]), color);
