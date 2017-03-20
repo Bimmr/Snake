@@ -18,13 +18,39 @@ namespace Snakez.Screens
 
         private Button editing;
         private Button threePlayers;
+        private Input aiBots;
 
         private List<Button> buttons;
 
         public SettingsScreen()
         {
-            keyboardListener = new KeyBoardListener((k) => {
-                if(editing != null)
+            this.aiBots = new Input(new Rectangle(200, 50, 100, 50), false)
+                .setTextFont(FontHandler.menuFont)
+                .setInputFilter(InputFilter.NUMBER)
+                .setText("9")
+                .setKeyTypeEvent((i, k) =>
+                {
+                    KeysConverter kc = new KeysConverter();
+                    Console.Write(""+i.getText());
+                    
+                })
+                .setSubmitEvent(i =>
+                {
+                    try
+                    {
+                        int value = int.Parse(i.getText());
+                        if (value <= 9 && value >= 2)
+                        {
+                            Settings.AISnakes = value;
+                        }
+                    }
+                    catch (Exception e) { }
+                });
+
+
+            keyboardListener = new KeyBoardListener((k) =>
+            {
+                if (editing != null)
                 {
                     for (int i = 0; i < 12; i++)
                     {
@@ -62,13 +88,14 @@ namespace Snakez.Screens
                 .setHoverEvent((b, s) => b.setBoxColor(Color.SlateGray))
                 .setNotHoverEvent((b, s) => b.setBoxColor(Color.Gray));
 
+
             Vector2 recPos = new Vector2(15, 80);
             Rectangle nameBox = new Rectangle((int)recPos.X + 75, (int)recPos.Y + 50, 125, 20);
             this.playerName = new Input(nameBox, false)
                 .setText("Player 1").setTextFont(FontHandler.menuFont).setTextColor(Color.Black)
                 .setKeyTypeEvent((i, k) => { Settings.Name = i.getText(); });
 
-             recPos = new Vector2(560, 80);
+            recPos = new Vector2(560, 80);
             threePlayers = new Button(new Rectangle((int)recPos.X + 75, (int)recPos.Y + 50, 125, 20))
                 .setSpriteFont(FontHandler.menuFont).setTextColor(Color.White).setText(Settings.ThreePlayers.ToString())
                 .setClickEvent((b, s) => { if (LastMouseState.LeftButton != ButtonState.Pressed) { Settings.ThreePlayers = !Settings.ThreePlayers; b.setText(Settings.ThreePlayers.ToString()); } });
@@ -158,8 +185,8 @@ namespace Snakez.Screens
 
             recPos = new Vector2(560, 80);
             Drawer.drawRectangle(new Rectangle((int)recPos.X, (int)recPos.Y, 225, 350), Color.White);
-            Drawer.drawRectangle(new Rectangle((int)recPos.X+1, (int)recPos.Y + 1, 223, 348), Color.Gray);
-            Drawer.drawRectangle(new Rectangle((int)recPos.X+1, (int)recPos.Y+1, 223, 35), Color.DarkGray);
+            Drawer.drawRectangle(new Rectangle((int)recPos.X + 1, (int)recPos.Y + 1, 223, 348), Color.Gray);
+            Drawer.drawRectangle(new Rectangle((int)recPos.X + 1, (int)recPos.Y + 1, 223, 35), Color.DarkGray);
             MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Player 3 Settings", new Vector2(recPos.X + 45, recPos.Y + 10), Color.White);
             MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Enabled: ", new Vector2(recPos.X + 10, recPos.Y + 50), Color.White);
             MonoHelper.SpriteBatch.DrawString(FontHandler.menuFont, "Up: ", new Vector2(recPos.X + 10, recPos.Y + 100), Color.White);
@@ -186,6 +213,7 @@ namespace Snakez.Screens
 
             returnButton.Draw(gameTime);
             playerName.Draw(gameTime);
+            aiBots.Draw(gameTime);
 
             base.Draw(gameTime);
         }
@@ -196,18 +224,19 @@ namespace Snakez.Screens
             playerName.Update(gameTime);
             keyboardListener.update();
             threePlayers.Update(gameTime);
-            
-            if(editing != null)
+            aiBots.Update(gameTime);
+
+            if (editing != null)
             {
                 foreach (Button b in buttons)
-                    if (editing == b) {
+                    if (editing == b)
+                    {
                         if (Mouse.GetState().LeftButton == ButtonState.Pressed && !b.getSize().Contains(Mouse.GetState().Position))
                         {
                             editing = null;
                             break;
                         }
                     }
-
             }
 
             foreach (Button b in buttons)

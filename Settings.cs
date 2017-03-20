@@ -24,5 +24,7 @@ namespace Snakez
         public static bool SinglePlayerAI = true;
 
         public static string Name = "Player 1";
+		
+		public static int AISnakes = 8;
     }
 }

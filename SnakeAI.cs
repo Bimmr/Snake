@@ -131,7 +131,7 @@ namespace Snakez
 
             Debug.WriteLine(name + ": Random Direction");
             //Try going all 4 directions(In a random order), and if nothing works give up
-            Random r = new Random();
+            Random r = new Random(Guid.NewGuid().GetHashCode());
             List<Direction> dirs = new List<Direction> { Direction.Up, Direction.Down, Direction.Left, Direction.Right };
             for (int i = 0; i < 4; i++)
             {

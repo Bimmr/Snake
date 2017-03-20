@@ -61,26 +61,27 @@ namespace Snakez.Screens
                     screenHandler.show("game");
                     GameScreen gs = (GameScreen)screenHandler.getCurrent();
                     gs.clearSnakes();
-                    Vector2 pos = new Vector2(MonoHelper.Middle.X - Snake.size / 2, MonoHelper.Middle.Y - Snake.size / 2);
-                    gs.addSnake(new SnakeAI("Mr. Snake", gs, new Vector2(10, 100)));
-                    gs.addSnake(new SnakeAI("Mr. Snake2", gs, new Vector2(110, 100)));
-                    gs.addSnake(new SnakeAI("Mr. Snake3", gs, new Vector2(210, 100)));
-                    gs.addSnake(new SnakeAI("Mr. Snake4", gs, new Vector2(310, 100)));
-                    gs.addSnake(new SnakeAI("Mr. Snake5", gs, new Vector2(410, 100)));
-                    gs.addSnake(new SnakeAI("Mr. Snake6", gs, new Vector2(510, 100)));
-                    gs.addSnake(new SnakeAI("Mr. Snake7", gs, new Vector2(610, 100)));
-                    gs.addSnake(new SnakeAI("Mr. Snake8", gs, new Vector2(710, 100)));
-                    gs.addSnake(new SnakeAI("Mr. Snake9", gs, new Vector2(800, 100)));
 
-                    gs.addSnake(new SnakeAI("Mr. Snake10", gs, new Vector2(10, 400)));
-                    gs.addSnake(new SnakeAI("Mr. Snake11", gs, new Vector2(110, 400)));
-                    gs.addSnake(new SnakeAI("Mr. Snake12", gs, new Vector2(210, 400)));
-                    gs.addSnake(new SnakeAI("Mr. Snake13", gs, new Vector2(310, 400)));
-                    gs.addSnake(new SnakeAI("Mr. Snake14", gs, new Vector2(410, 400)));
-                    gs.addSnake(new SnakeAI("Mr. Snake15", gs, new Vector2(510, 400)));
-                    gs.addSnake(new SnakeAI("Mr. Snake16", gs, new Vector2(610, 400)));
-                    gs.addSnake(new SnakeAI("Mr. Snake17", gs, new Vector2(710, 400)));
-                    gs.addSnake(new SnakeAI("Mr. Snake18", gs, new Vector2(800, 400)));
+                    int gridSize = 3;
+                    int snakes = 0;
+                    int spacingX = (int)(MonoHelper.Size.X / 3);
+                    int spacingY = (int)(MonoHelper.Size.Y / 3);
+
+                    for (int r = 0; r < gridSize; r++)
+                    {
+                        for (int c = 0; c < gridSize; c++)
+                        {
+                            if (snakes >= Settings.AISnakes)
+                                break;
+
+                            int curY = (spacingY * r) + spacingY/2;
+                            int curX = (spacingX * c) + spacingX/2;
+
+                            gs.addSnake(new SnakeAI("Mr. Snake" + (snakes+1), gs, new Vector2(curX, curY)));
+
+                            snakes++;
+                        }
+                    }
                 }
             });
 
